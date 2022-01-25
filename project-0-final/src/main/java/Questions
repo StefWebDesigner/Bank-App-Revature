@@ -1,0 +1,41 @@
+
+Task:
+1) Connect server to the project ( I think I need to import the package for the connection)
+- in JBCSUITL >>> 1) What should I put in className - 2) is this safe puttin my password here
+2) make the datestore
+3) work on the login filtering and validation stuff for the creation sequence
+    - first/name validator isn't working
+   - email and matches doens't works (https://mailtrap.io/blog/java-email-validation/)
+   - None of my checks works? They are ignored completed despite having if conditions to
+   stop them
+   - Can != apply to int's
+
+
+Extra Notes for implement in PRoject:
+- add with pogos revisions on my projects to employee side
+- Integer changeAmt = new Double(changeAmtDbl * 100).intValue();
+> for formating the money
+- a way to format the input
+> System.out.println("Your input: " + input \n\n\n\n\n\n);
+- System.out.printf("$%.2f\n",55,55f); //55dollars and 55 cent //learn how to really percise with it
+- System.out.printf("Account balance: $" + 55.55f + ". Have a nice day!"; with a message with it
+
+
+Extra Fancy Stuff:
+To add the findal reivew dispaly of the infomation all formated autoamticlly!!!!
+Here is an example...dependencies are giving me problems though
+https://github.com/placemarkt/address-formatter-java
+
+
+
+
+
+Connecting survery Help:
+
+https://www.youtube.com/watch?v=e8g9eNnFpHQ&t=32s >>>> He knows his stuff!
+
+https://www.youtube.com/watch?v=AfL9EJGyYG8
+https://www.progress.com/blogs/jdbc-tutorial-connecting-to-your-database-using-jdbc#:~:text=To%20do%20this%20in%20Intellij,jar%20files%20to%20the%20project.
+https://www.jetbrains.com/help/idea/maven-support.html#create_new_maven_project
+https://www.youtube.com/watch?v=e8g9eNnFpHQ&t=32s
+
