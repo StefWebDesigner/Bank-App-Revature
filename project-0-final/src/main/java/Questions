@@ -1,4 +1,25 @@
 
+Problems to fix:
+Create Login:
+- First and last Name's not entering there if conditions if false
+    > The firstName input auto is positive in proceeding to the nexxt line without typying input
+- the validators works when true or false >>> with false it showss an error
+- Country when false is not directing me back to the intial strceen
+- If final validation is false it just leads to excaptions
+- Email is showing false to everything! --- it works but not acurate
+- Unable to send the data to the server
+
+Bank app:
+- Second option is not working
+
+Login in: (Notes maybe helpful to get started);
+
+
+Bank applications:
+-- make a check list of all the qualifications
+
+
+
 Task:
 1) Connect server to the project ( I think I need to import the package for the connection)
 - in JBCSUITL >>> 1) What should I put in className - 2) is this safe puttin my password here

@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.sql.SQLException;
+
 public abstract class View {
 
     protected String viewName;
@@ -7,6 +10,6 @@ public abstract class View {
         return viewName;
     }
 
-    public abstract void renderView();
+    public abstract void renderView() throws SQLException, IOException;
 
 }

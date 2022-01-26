@@ -1,13 +1,14 @@
 package Persistance;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
-public interface DataSourceCRUD {
+public interface DataSourceCRUD <T>{
     //CRUD - CREATE, READ, UPDATE, DELETE
-    public T create(T t) throws SQLException;
-    public T read(Integer id) throws SQLException;
-    public T update(T t) throws SQLException;
-    public void delete(Integer id) throws SQLException;
+    public Integer create(T t) throws SQLException, IOException;
+    public T read(Integer id) throws SQLException, IOException;
+    public T update(T t) throws SQLException, IOException;
+    public void delete(Integer id) throws SQLException, IOException;
 
 
 

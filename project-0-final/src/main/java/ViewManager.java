@@ -1,3 +1,5 @@
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -38,7 +40,7 @@ public class ViewManager {
             viewList.add(view);
         }
 
-        public void render() { nextView.renderView(); }
+        public void render() throws SQLException, IOException { nextView.renderView(); }
 
         public Scanner getScanner() {
             return scanner;

@@ -6,22 +6,40 @@ public class bankAccountClasses {
 
     static int balance = 700;
     //        static int depositUserInput;
-    static int amount;
-    String clientName;
+    int amount = 0;
+    static int checkingAcctBalance = 900;
+    static int savingAcctBalance = 300;
+    static int mainBankAccountNumber = 12345;
 
-    static void deposit(int balance, int amount) {
-        balance = balance + amount;
-        System.out.println("Deposite Complete. Current Balance : " + balance);
+
+    static void deposit(int amount, int i) {
+        checkingAcctBalance = checkingAcctBalance + amount;
+        savingAcctBalance = checkingAcctBalance + amount;
+        if(amount >= 5000) {
+            amount = 0; //it is changed to zero
+            System.out.println("You have reached you deposite amount limit!");
+        } else {
+            System.out.println("Elihable to depoist money");
+        }
     }
 
-    static void withdraw(int balance, int amount) {
-        balance = balance - amount;
-        System.out.println("Withdraw Complete. Current Balance : " + balance);
+    static void withdraw(int amount, int i) {
+        checkingAcctBalance = checkingAcctBalance - amount;
+        savingAcctBalance = checkingAcctBalance - amount;
+        if (checkingAcctBalance == -1) {
+            amount = 0; //it is changed to zero
+            System.out.println("Withdraw attempt denied!");
+        } else if (savingAcctBalance == -1) {
+            System.out.println("Withdraw attempt denied!");
+        } else {
+            System.out.println("able to withdraw money");
+        }
     }
 
-    void transactions() {
-        System.out.println("Bank Account of " + clientName);
-        System.out.println("Current Account : " + balance);
-    }
+    static void transactions(int mainBankAccountNumber) {
+        System.out.println("Bank Account of " + mainBankAccountNumber);
+        System.out.println("Current Checking Account : " + checkingAcctBalance);
+        System.out.println("Current Savings Account : " + savingAcctBalance);
+        }
 
 }

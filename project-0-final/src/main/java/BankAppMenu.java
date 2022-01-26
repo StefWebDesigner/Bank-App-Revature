@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class BankAppMenu extends View {
 
     public BankAppMenu() {
@@ -11,62 +9,106 @@ public class BankAppMenu extends View {
 //is it nesisary to do the do while loop anymore
     public void renderView() {
 
-        int appBankInput;
-        do {
-            System.out.println("Welcome to Bank of DodgeCoin");
-            //THIS IS WHERE TO ENTER IF TO CREATE AN ACCOUNT OR OR LOGIN WITH
-            //I NEED TO LEARN HOW TO DO LIST SO SKIP THIS FOR NOW
-            System.out.println("----------------------------------");
-            System.out.println(" #1 For Deposite Activities");
-            System.out.println(" #2 For Withdraw Activities");
-            System.out.println(" #3 View your Current Account");
-            System.out.println(" #4 Close application");
-            System.out.println("Please choose an option");
-            System.out.println("----------------------------------");
+        System.out.println("Welcome to Bank of DodgeCoin");
+        //THIS IS WHERE TO ENTER IF TO CREATE AN ACCOUNT OR OR LOGIN WITH
+        //I NEED TO LEARN HOW TO DO LIST SO SKIP THIS FOR NOW
+        System.out.println("----------------------------------");
+        System.out.println(" #1 For Deposit Activities");
+        System.out.println(" #2 For Withdraw Activities");
+        System.out.println(" #3 View your Current Account");
+        System.out.println(" #4 Close application");
+        System.out.println("Please choose an option");
+        System.out.println("----------------------------------");
 
-            appBankInput = viewManager.getScanner().nextInt();
-            ;
+        int appBankInput = viewManager.getScanner().nextInt();
+        viewManager.getScanner().nextLine();
+        int accountChoosingInput = 0;
+        int amount = 0;
+        int i = 0;
 
-            //how to connect the user input to the switch condition
+        if (appBankInput == 1) {
 
-            if (appBankInput == 1) {
-                System.out.println("You have selected the deposite option:");
-                System.out.println("Your current balance is : " + bankAccountClasses.balance);
-                System.out.println("How much do you want to deposit : ");
-                bankAccountClasses.amount = viewManager.getScanner().nextInt();
-                //I'm trying to make this input equal balance
-                //am I better making balance a scope value but then how will that work with class
+            System.out.println("You have selected the deposite option:");
+            System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.checkingAcctBalance);
+            System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.savingAcctBalance);
+
+            System.out.println("How much do you want to deposit : ");
+            amount = viewManager.getScanner().nextInt();
+            viewManager.getScanner().nextLine();
+
+            System.out.println("Which account do you want to deposit the money:");
+            System.out.println("1# for checking");
+            System.out.println("2# for saving");
+            accountChoosingInput = viewManager.getScanner().nextInt();
+            viewManager.getScanner().nextLine();
+            if (accountChoosingInput == 1) {
+                bankAccountClasses.deposit(amount, i);
+                i = bankAccountClasses.checkingAcctBalance;
+//                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
                 System.out.println("**********************************");
-                bankAccountClasses.deposit(bankAccountClasses.balance, bankAccountClasses.amount);
+                System.out.println("Checking balance of : " + bankAccountClasses.checkingAcctBalance);
                 System.out.println("**********************************");
-                System.out.println("----------------------------------");
-            } else if (appBankInput == 2) {
-                System.out.println("You have selected the deposite option:");
-                System.out.println("Your current balance is : " + bankAccountClasses.balance);
-                System.out.println("How much do you want to withdaw : ");
-                bankAccountClasses.amount = viewManager.getScanner().nextInt();
+                viewManager.navigator("BankAppMenu");
+            } else if (accountChoosingInput == 2) {
+                bankAccountClasses.deposit(amount, i);
+                //                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
+                i = bankAccountClasses.savingAcctBalance;
                 System.out.println("**********************************");
-                bankAccountClasses.withdraw(bankAccountClasses.balance, bankAccountClasses.amount);
+                System.out.println("Savings balance of : " + bankAccountClasses.savingAcctBalance);
                 System.out.println("**********************************");
-                System.out.println("----------------------------------");
-            } else if (appBankInput == 3) {
-                System.out.println("You have selected to view your Current balance:");
-                System.out.println("**********************************");
-                System.out.println("Your current balance is : " + bankAccountClasses.balance);
-                System.out.println("**********************************");
-                System.out.println("----------------------------------");
-            } else {
-                System.out.println("You have selected to close the application.");
-                System.out.println("Thanks for banking with Dodgecoin.");
-                break;
+                viewManager.navigator("BankAppMenu");
             }
-        } while (appBankInput != 4);
+        } else if (appBankInput == 2) {
 
-        //STORE THE RESPONSE INTO THE A DATA STORE
+            System.out.println("You have selected the withdraw option:");
+            System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.checkingAcctBalance);
+            System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.savingAcctBalance);
 
-        //GET THE CODE WORKIGN THEN ADD THE DATA STORE
-//        viewManager.navigator("BankAppMenu");
+            System.out.println("How much do you want to deposit : ");
+            amount = viewManager.getScanner().nextInt();
+            viewManager.getScanner().nextLine();
+
+            System.out.println("Which account do you want to withdraw the money:");
+            System.out.println("1# for checking");
+            System.out.println("2# for saving");
+            accountChoosingInput = viewManager.getScanner().nextInt();
+            viewManager.getScanner().nextLine();
+            if (accountChoosingInput == 1) {
+                bankAccountClasses.withdraw(amount, i);
+                i = bankAccountClasses.checkingAcctBalance;
+//                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
+                System.out.println("**********************************");
+                System.out.println("Checking balance of : " + bankAccountClasses.checkingAcctBalance);
+                System.out.println("**********************************");
+                viewManager.navigator("BankAppMenu");
+            } else if (accountChoosingInput == 2) {
+                bankAccountClasses.deposit(amount, i);
+                i = bankAccountClasses.savingAcctBalance;
+                System.out.println("**********************************");
+                System.out.println("Savings balance of : " + bankAccountClasses.savingAcctBalance);
+                System.out.println("**********************************");
+                viewManager.navigator("BankAppMenu");
+            }
+        } else if (appBankInput == 3) {
+            bankAccountClasses.transactions(bankAccountClasses.mainBankAccountNumber);
+            System.out.println("Bank Account Balances for : " + bankAccountClasses.mainBankAccountNumber);
+            System.out.println("**********************************");
+
+            System.out.println("**********************************");
+            System.out.println("Checking balance of : " + bankAccountClasses.checkingAcctBalance);
+            System.out.println("Saving balance of : " + bankAccountClasses.savingAcctBalance);
+            System.out.println("**********************************");
+
+        } else if (appBankInput == 4) {
+            System.out.println("Thank for using bank of DodgeCoin");
+            viewManager.quit();
+        } else {
+            System.out.println("Incorrect input try again");
+            viewManager.navigator("BankAppMenu");
+        }
     }
+}
+
 
 
 //    public void renderView() {
@@ -81,7 +123,4 @@ public class BankAppMenu extends View {
 //        System.out.println("Please enter number here: " + intialMenuInput);
 //        System.out.println("________________________________________________________");
 
-
-
-}
 
