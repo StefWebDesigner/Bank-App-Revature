@@ -30,7 +30,7 @@ public class BankAppMenu extends View {
 
             System.out.println("You have selected the deposite option:");
             System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.checkingAcctBalance);
-            System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.savingAcctBalance);
+            System.out.println("Your current SavingAcctBalance is : " + bankAccountClasses.savingAcctBalance);
 
             System.out.println("How much do you want to deposit : ");
             amount = viewManager.getScanner().nextInt();
@@ -41,30 +41,30 @@ public class BankAppMenu extends View {
             System.out.println("2# for saving");
             accountChoosingInput = viewManager.getScanner().nextInt();
             viewManager.getScanner().nextLine();
-            if (accountChoosingInput == 1) {
+            System.out.println("Pulling up information now");
+//            if (accountChoosingInput == 1) {
                 bankAccountClasses.deposit(amount, i);
-                i = bankAccountClasses.checkingAcctBalance;
-//                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
-                System.out.println("**********************************");
-                System.out.println("Checking balance of : " + bankAccountClasses.checkingAcctBalance);
-                System.out.println("**********************************");
+//                i = bankAccountClasses.checkingAcctBalance;
+////                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
+//                System.out.println("**********************************");
+//                System.out.println("Checking balance of : " + bankAccountClasses.checkingAcctBalance);
+//                System.out.println("**********************************");
+//                viewManager.navigator("BankAppMenu");
+//            } else if (accountChoosingInput == 2) {
+//                bankAccountClasses.deposit(amount, i);
+//                //                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
+//                i = bankAccountClasses.savingAcctBalance;
+//                System.out.println("**********************************");
+//                System.out.println("Savings balance of : " + bankAccountClasses.savingAcctBalance);
+//                System.out.println("**********************************");
                 viewManager.navigator("BankAppMenu");
-            } else if (accountChoosingInput == 2) {
-                bankAccountClasses.deposit(amount, i);
-                //                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
-                i = bankAccountClasses.savingAcctBalance;
-                System.out.println("**********************************");
-                System.out.println("Savings balance of : " + bankAccountClasses.savingAcctBalance);
-                System.out.println("**********************************");
-                viewManager.navigator("BankAppMenu");
-            }
         } else if (appBankInput == 2) {
 
             System.out.println("You have selected the withdraw option:");
             System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.checkingAcctBalance);
-            System.out.println("Your current checkingAcctBalance is : " + bankAccountClasses.savingAcctBalance);
+            System.out.println("Your current SavingAcctBalance is : " + bankAccountClasses.savingAcctBalance);
 
-            System.out.println("How much do you want to deposit : ");
+            System.out.println("How much do you want to withdraw : ");
             amount = viewManager.getScanner().nextInt();
             viewManager.getScanner().nextLine();
 
@@ -73,22 +73,25 @@ public class BankAppMenu extends View {
             System.out.println("2# for saving");
             accountChoosingInput = viewManager.getScanner().nextInt();
             viewManager.getScanner().nextLine();
-            if (accountChoosingInput == 1) {
+//            if (accountChoosingInput == 1) {
                 bankAccountClasses.withdraw(amount, i);
-                i = bankAccountClasses.checkingAcctBalance;
-//                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
-                System.out.println("**********************************");
-                System.out.println("Checking balance of : " + bankAccountClasses.checkingAcctBalance);
-                System.out.println("**********************************");
+
+            System.out.println(bankAccountClasses.checkingAcctBalance);//testing
+            System.out.println(amount); //TESTING
+//                i = bankAccountClasses.checkingAcctBalance;
+////                bankAccountClasses.deposit(bankAccountClasses.checkingAcctBalance, amount);
+//                System.out.println("**********************************");
+//                System.out.println("Checking balance of : " + bankAccountClasses.checkingAcctBalance);
+//                System.out.println("**********************************");
+//                viewManager.navigator("BankAppMenu");
+//            } else if (accountChoosingInput == 2) {
+//                bankAccountClasses.deposit(amount, i);
+//                i = bankAccountClasses.savingAcctBalance;
+//                System.out.println("**********************************");
+//                System.out.println("Savings balance of : " + bankAccountClasses.savingAcctBalance);
+//                System.out.println("**********************************");
                 viewManager.navigator("BankAppMenu");
-            } else if (accountChoosingInput == 2) {
-                bankAccountClasses.deposit(amount, i);
-                i = bankAccountClasses.savingAcctBalance;
-                System.out.println("**********************************");
-                System.out.println("Savings balance of : " + bankAccountClasses.savingAcctBalance);
-                System.out.println("**********************************");
-                viewManager.navigator("BankAppMenu");
-            }
+//            }
         } else if (appBankInput == 3) {
             bankAccountClasses.transactions(bankAccountClasses.mainBankAccountNumber);
             System.out.println("Bank Account Balances for : " + bankAccountClasses.mainBankAccountNumber);

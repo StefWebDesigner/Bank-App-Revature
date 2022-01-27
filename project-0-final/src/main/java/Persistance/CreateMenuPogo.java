@@ -35,6 +35,9 @@ public class CreateMenuPogo {
     public CreateMenuPogo(String username, String password) {
     }
 
+//    public CreateMenuPogo(int client_id, String password) {
+//    }
+
 //    public CreateMenuPogo getCreateMenuPogo() {
 //        return createMenuPogo;
 //    }
@@ -125,78 +128,6 @@ public class CreateMenuPogo {
 
     public void create(CreateMenuPogo newUser) {
     }
-
-    //SETTERS
-    //WILL I NEED ALL OF THESE GETTER & TO BE CONTINUED
-//
-//
-//    public Integer getId() {
-//        return client_id;
-//    }
-//
-//    public String getUsername() {
-//        return username;
-//    }
-//
-//
-//    public String getFirstName() {
-//        return permFirstName;
-//    }
-//
-//    public String getLastName() {
-//        return permLastName;
-//    }
-//
-//    public String getCountry() {
-//        return permCountry;
-//    }
-//
-//    public String getAddressStreet() {
-//        return permAddressStreet;
-//    }
-//
-//    public String getAddressState() {
-//        return permAddressState;
-//    }
-//
-//    public Integer getAddressZipCode() {
-//        return permAddressZipCode;
-//    }
-//
-//    //SETTERS
-//
-//    public void setId(Integer client_id) {
-//        this.client_id = client_id;
-//    }
-//
-//    public void setUsername() {
-//        this.username = username;
-//    }
-//
-//    public void setFirstName() {
-//        this.permFirstName = permFirstName;
-//    }
-//
-//    public void setLastName() {
-//        this.permLastName = permLastName;
-//    }
-//
-//    public void setCountry() {
-//        this.permCountry = permCountry;
-//    }
-//
-//    public void setAddressStreet() {
-//        this.permAddressStreet = permAddressStreet;
-//    }
-//
-//    public void setAddressState() {
-//        this.permAddressState = permAddressState;
-//    }
-//
-//    public void setAddressZipCode() {
-//        this.permAddressZipCode = permAddressZipCode;
-//
-//    }
 
 
 }

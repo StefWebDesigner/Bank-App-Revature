@@ -10,7 +10,6 @@ public class ContextStore {
         currentUser = user;
     }
 
-
     public static CreateMenuPogo getCurrentUser() {
         return currentUser;
     }

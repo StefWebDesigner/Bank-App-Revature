@@ -14,7 +14,7 @@ public class Main {
 
         viewManager.registerView(new MainInitialMenu());
         viewManager.registerView(new MainInitialLoginMenu());
-//        viewManager.registerView(new MainInitialCreateMenu());
+        viewManager.registerView(new MainInitialCreateMenu());
         viewManager.registerView(new BankAppMenu());
 
                 viewManager.navigator("MainInitialMenu");

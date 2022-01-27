@@ -17,12 +17,17 @@ public class MainInitialLoginMenu extends View {
         String password = viewManager.getScanner().nextLine();
         //ADD A VALIDATING CONDITION HERE
         //TEMPORARLY ADDING THIS FOR SAKE PURPOSES
-        System.out.println("You have logged in successfully");
         System.out.println("________________________________________________________");
 
         //STORE THE RESPONSE INTO THE A DATA STORE
         CreateMenuPogo repo = new CreateMenuPogo(username, password);
         new ContextStore();
+
+//        System.out.println("________________________________________________________");
+//        System.out.println(permFirstName + permLastName + " have logged in successfully");
+//        System.out.println("________________________________________________________");
+//
+
 //        new ContextStore(username, password);
 
         //NOT WORKING!!!!!""£"£"£"

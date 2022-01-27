@@ -12,7 +12,7 @@ public class CreateMenuRepo implements DataSourceCRUD<CreateMenuPogo> {
 
     public Integer create(CreateMenuPogo createMenuPogo) throws SQLException, IOException {
         //I believe I need to add all the parameters to the field
-        String sql = "INSERT INTO client_information ( username, permPassword, permFirstName, permLastName, permEmail, permCountry, permAddressStreet, permAddressState, permAdressZipCode) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+        String sql = "INSERT INTO client_information ( username, permPassword, permFirstName, permLastName, permEmail, permCountry, permAddressStreet, permAddressState, permAddressZipCode) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 //        pstmt.setInt(1, createMenuPogo.getId());
         pstmt.setString(1, createMenuPogo.getUsername());
@@ -57,7 +57,7 @@ public class CreateMenuRepo implements DataSourceCRUD<CreateMenuPogo> {
         if (rs.next()) {
             user.setId(rs.getInt("client_id"));
             user.setUsername(rs.getString("username"));
-            user.setUsername(rs.getString("permPassword"));
+            user.setPermPassword(rs.getString("permPassword"));
             user.setPermFirstName(rs.getString("permFirstName"));
             user.setPermLastName(rs.getString("permLastName"));
             user.setPermCountry(rs.getString("permEmail"));
@@ -98,7 +98,7 @@ public class CreateMenuRepo implements DataSourceCRUD<CreateMenuPogo> {
             CreateMenuPogo verifiedUserModel = new CreateMenuPogo();
             verifiedUserModel.setId(rs.getInt("client_id"));
             verifiedUserModel.setUsername(rs.getString("username"));
-            verifiedUserModel.setUsername(rs.getString("permPassword"));
+            verifiedUserModel.setPermPassword(rs.getString("permPassword"));
             verifiedUserModel.setPermFirstName(rs.getString("permFirstName"));
             verifiedUserModel.setPermLastName(rs.getString("permLastName"));
             verifiedUserModel.setPermCountry(rs.getString("permEmail"));
@@ -134,10 +134,11 @@ public class CreateMenuRepo implements DataSourceCRUD<CreateMenuPogo> {
 //        pstmt.setString(1, username);
 //        ResultSet rs = pstmt.executeQuery();
 //        if (rs.next() && rs.getString("password").equals(password)) {
-//            return new CreateMenuPogo(rs.getInt("client_id"), rs.getString("rs.setString("password")));
+////            return new CreateMenuPogo(rs.getInt("client_id"), rs.getString(rs.setString("password")));
+//            return new CreateMenuPogo(rs.getInt("client_id"), (rs.getString("password")));
 //
 //        } else {
-//            return false;
+//            return null;
 //        }
 //    }
 }
