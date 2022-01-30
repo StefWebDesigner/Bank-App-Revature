@@ -15,9 +15,14 @@ public class Main {
         viewManager.registerView(new MainInitialMenu());
         viewManager.registerView(new MainInitialLoginMenu());
         viewManager.registerView(new MainInitialCreateMenu());
-        viewManager.registerView(new BankAppMenu());
+        viewManager.registerView(new BankAppMainMenu());
+        viewManager.registerView(new DepositCheckingMenu());
+        viewManager.registerView(new DepositSavingMenu());
+        viewManager.registerView(new WithdrawCheckingMenu());
+        viewManager.registerView(new WithdrawSavingMenu());
+        viewManager.registerView(new CheckBalanceMenu());
 
-                viewManager.navigator("MainInitialMenu");
+        viewManager.navigator("MainInitialMenu");
 
         //in case I need it
 //        viewManager.navigator("MainInitialLoginMenu");

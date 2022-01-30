@@ -13,6 +13,7 @@ public class MainInitialLoginMenu extends View {
         System.out.println("________________________________________________________");
         System.out.println("Enter your username : ");
         String username = viewManager.getScanner().nextLine();
+
         System.out.println("Enter your password : ");
         String password = viewManager.getScanner().nextLine();
         //ADD A VALIDATING CONDITION HERE
@@ -20,25 +21,33 @@ public class MainInitialLoginMenu extends View {
         System.out.println("________________________________________________________");
 
         //STORE THE RESPONSE INTO THE A DATA STORE
-        CreateMenuPogo repo = new CreateMenuPogo(username, password);
+        /*
+        Write an auth script (SQL) in the user creation repo. This script should query the database for client_information
+        You want to say something like "SELECT * FROM client_information WHERE username = ?" <- parameterize it and execute...
+        Then you will receive a resultset with either 0 or 1 user in it. Now check that the returned user (if any) matches the given password.
+
+        Then finish marhsalling the other database data from the table into a POJO, and store that pojo as the current user
+        in he context store.
+
+        You will also need to complete the context store. Simply create static fields for things
+        to store (like a user POJO) and getters/setters for it
+         */
+        CreateMenuPogo user = new CreateMenuPogo(username, password);
         new ContextStore();
 
 //        System.out.println("________________________________________________________");
-//        System.out.println(permFirstName + permLastName + " have logged in successfully");
+//        System.out.println(firstName + lastName + " have logged in successfully");
 //        System.out.println("________________________________________________________");
-//
 
-//        new ContextStore(username, password);
+        if(user == null){
+            System.out.println("Incorect information --- please try again");
+            viewManager.navigator("MainInitialMenu");
+            return;
 
-        //NOT WORKING!!!!!""£"£"£"
-//        if(!user == null){
-//            System.out.println("Incorrect Credentials");
-//            viewManager.navigator("MainInitialMenu");
-//
-//        }
+        }
 
-        //GET THE CODE WORKIGN THEN ADD THE DATA STORE
-            viewManager.navigator("BankAppMenu");
+            ContextStore.setCurrentUser(user);
+            viewManager.navigator("BankAppMainMenu");
     }
 }
 

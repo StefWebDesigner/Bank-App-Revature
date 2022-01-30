@@ -39,4 +39,9 @@ public class BankPogo {
     public static int getSavingAcctBalance() {
         return savingAcctBalance;
     }
+
+    public void checkingAcctBalance() {
+        this.checkingAcctBalance = checkingAcctBalance;
+
+    }
 }

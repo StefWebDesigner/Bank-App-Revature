@@ -1,135 +1,147 @@
 package Persistance;
 
+
 public class CreateMenuPogo {
+
+
+
     //CREATE MENU VARIABLES
     private Integer id;
     private String username;
-    private String permPassword;
-    private String permFirstName;
-    private String permLastName;
-    private String permEmail;
-    private String permCountry;
-    private String permAddressStreet;
-    private String permAddressState;
-    private Integer permAddressZipCode;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String country;
+    private String addressStreet;
+    private String addressState;
+    private Integer addressZipCode;
 
     public CreateMenuPogo() {
+
     }
 
-    public CreateMenuPogo( String username, String permPassword, String permFirstName, String permLastName, String permEmail, String permCountry, String permAddressStreet, String permAddressState, Integer permAddressZipCode) {
-        this.username = username;
-        this.permPassword = permPassword;
-        this.permFirstName = permFirstName;
-        this.permLastName = permLastName;
-        this.permEmail = permEmail;
-        this.permCountry = permCountry;
-        this.permAddressStreet = permAddressStreet;
-        this.permAddressState = permAddressState;
-        this.permAddressZipCode = permAddressZipCode;
-    }
 
-//
-//    public CreateMenuPogo(String permFirstName, String permLastName, String username, String permCountry, String permAddressStreet, String permAddressState, int permAddressZipCode) {
-//    }
+    public CreateMenuPogo(Integer id, String username, String password, String firstName, String lastName, String email, String country, String addressStreet, String addressState, Integer addressZipCode) {
+            this.id = id;
+            this.username = username;
+            this.password = password;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.country = country;
+            this.addressStreet = addressStreet;
+            this.addressState = addressState;
+            this.addressZipCode = addressZipCode;
+        }
+
 
     public CreateMenuPogo(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-//    public CreateMenuPogo(int client_id, String password) {
-//    }
+    public CreateMenuPogo(String username, String password, String firstName, String lastName, String email, String country, String addressStreet, String addressState, Integer addressZipCode) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.country = country;
+        this.addressStreet = addressStreet;
+        this.addressState = addressState;
+        this.addressZipCode = addressZipCode;
+    }
 
-//    public CreateMenuPogo getCreateMenuPogo() {
-//        return createMenuPogo;
-//    }
 
-//    public void setCreateMenuPogo(CreateMenuPogo createMenuPogo) {
-//        this.createMenuPogo = createMenuPogo;
-//    }
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+
+    public void setId(Integer client_id) {
         this.id = id;
+    }
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setId(int client_id) {
     }
 
-    public String getPermPassword() {
-        return permPassword;
-    }
+    public String getPassword () {
+            return password;
+        }
 
-    public void setPermPassword(String permPassword) {
-        this.permPassword = permPassword;
-    }
+        public void setPassword (String password){
+            this.password = password;
+        }
 
-    public String getPermFirstName() {
-        return permFirstName;
-    }
+        public String getFirstName () {
+            return firstName;
+        }
 
-    public void setPermFirstName(String permFirstName) {
-        this.permFirstName = permFirstName;
-    }
+        public void setFirstName (String firstName){
+            this.firstName = firstName;
+        }
 
-    public String getPermLastName() {
-        return permLastName;
-    }
+        public String getLastName () {
+            return lastName;
+        }
 
-    public void setPermLastName(String permLastName) {
-        this.permLastName = permLastName;
-    }
+        public void setLastName (String lastName){
+            this.lastName = lastName;
+        }
 
-    public String getPermEmail() {
-        return permEmail;
-    }
+        public String getEmail () {
+            return email;
+        }
 
-    public void getPermEmail(String permEmail) {
-        this.permEmail = permEmail;
-    }
+        public void setEmail (String email){
+            this.email = email;
+        }
 
-    public String getPermCountry() {
-        return permCountry;
-    }
+        public String getCountry () {
+            return country;
+        }
 
-    public void setPermCountry(String permCountry) {
-        this.permCountry = permCountry;
-    }
+        public void setCountry (String country){
+            this.country = country;
+        }
 
-    public String getPermAddressStreet() {
-        return permAddressStreet;
-    }
+        public String getAddressStreet () {
+            return addressStreet;
+        }
 
-    public void setPermAddressStreet(String permAddressStreet) {
-        this.permAddressStreet = permAddressStreet;
-    }
+        public void setAddressStreet (String addressStreet){
+            this.addressStreet = addressStreet;
+        }
 
-    public String getPermAddressState() {
-        return permAddressState;
-    }
+        public String getAddressState () {
+            return addressState;
+        }
 
-    public void setPermAddressState(String permAddressState) {
-        this.permAddressState = permAddressState;
-    }
+        public void setAddressState (String addressState){
+            this.addressState = addressState;
+        }
 
-    public Integer getPermAddressZipCode() {
-        return permAddressZipCode;
-    }
+        public Integer getAddressZipCode () {
+            return addressZipCode;
+        }
 
-    public void setPermAddressZipCode(Integer permAddressZipCode) {
-        this.permAddressZipCode = permAddressZipCode;
-    }
+        public void setAddressZipCode (Integer addressZipCode){
+            this.addressZipCode = addressZipCode;
+        }
 
-    public void create(CreateMenuPogo newUser) {
-    }
-
+        public void create (CreateMenuPogo newUser){
+        }
 
 }
+
+
 
 
