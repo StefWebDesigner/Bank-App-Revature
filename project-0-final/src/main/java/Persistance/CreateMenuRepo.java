@@ -146,7 +146,7 @@ public class CreateMenuRepo implements DataSourceCRUD<CreateMenuPogo> {
 
     public CreateMenuPogo authenticate(String username, String password) throws SQLException, IOException {
         //THIS WILL VALIDATED IF IT IS TRUE
-        String sql = "SELECT * FROM client_information WHERE username = ?, password = ?"; // IS THIS UPPOSE TO ALSOE TAKE ALL PRAMTERS IF i ONLY NEED THE USER / PASSWORD
+        String sql = "SELECT * FROM client_information WHERE username = ? AND password = ?"; // IS THIS UPPOSE TO ALSOE TAKE ALL PRAMTERS IF i ONLY NEED THE USER / PASSWORD
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         pstmt.setString(1, username);
         pstmt.setString(2, password); //temp took out
@@ -155,18 +155,29 @@ public class CreateMenuRepo implements DataSourceCRUD<CreateMenuPogo> {
         //NO TRUE/FALSE === IT BASED ON THE THE AMOUNT OF RETURNED BACK=
         if (rs.next()) {// if this is true, then we have a matching user/pass in our result set, so the user is authenticated //temp took out
             //                             return new CreateMenuPogo(rs.getInt("client_id"), rs.getString(rs.setString("password")));
-            CreateMenuPogo newUser = new CreateMenuPogo();
-            newUser.setUsername(rs.getString("username"));
-            newUser.setPassword(rs.getString("password"));
-            newUser.setFirstName(rs.getString("firstName"));
-            newUser.setLastName(rs.getString("lastName"));
-            newUser.setCountry(rs.getString("email"));
-            newUser.setCountry(rs.getString("country"));
-            newUser.setAddressStreet(rs.getString("addressStreet"));
-            newUser.setAddressState(rs.getString("addressState"));
-            newUser.setAddressZipCode(rs.getInt("addressZipCode"));
+            CreateMenuPogo user = new CreateMenuPogo();
+            user.setUsername(rs.getString("username"));
+            user.setPassword(rs.getString("password"));
+            user.setFirstName(rs.getString("firstName"));
+            user.setLastName(rs.getString("lastName"));
+            user.setCountry(rs.getString("email"));
+            user.setCountry(rs.getString("country"));
+            user.setAddressStreet(rs.getString("addressStreet"));
+            user.setAddressState(rs.getString("addressState"));
+            user.setAddressZipCode(rs.getInt("addressZipCode"));
 
-            return newUser;
+//            CreateMenuPogo newUser = new CreateMenuPogo();
+//            newUser.setUsername(rs.getString("username"));
+//            newUser.setPassword(rs.getString("password"));
+//            newUser.setFirstName(rs.getString("firstName"));
+//            newUser.setLastName(rs.getString("lastName"));
+//            newUser.setCountry(rs.getString("email"));
+//            newUser.setCountry(rs.getString("country"));
+//            newUser.setAddressStreet(rs.getString("addressStreet"));
+//            newUser.setAddressState(rs.getString("addressState"));
+//            newUser.setAddressZipCode(rs.getInt("addressZipCode"));
+
+            return user;
         }
 
             return null;

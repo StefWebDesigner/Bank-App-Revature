@@ -15,8 +15,10 @@ public class BankRepo implements DataSourceCRUD<BankPogo> {
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
         pstmt.setInt(1, bankPogo.getMainBankAccountNumber());
-        pstmt.setInt(2, bankPogo.getCheckingAcctBalance());
-        pstmt.setInt(3, bankPogo.getSavingAcctBalance());
+//        pstmt.setInt(2, bankPogo.getCheckingAcctBalance());
+//        pstmt.setInt(3, bankPogo.getSavingAcctBalance());
+        pstmt.setDouble(2, bankPogo.getCheckingAcctBalance());
+        pstmt.setDouble(3, bankPogo.getSavingAcctBalance());
 
         pstmt.executeUpdate();
         ResultSet rs = pstmt.getGeneratedKeys();
@@ -34,11 +36,17 @@ public class BankRepo implements DataSourceCRUD<BankPogo> {
         pstmt.setInt(1, id); //it has id instead here
         ResultSet rs = pstmt.executeQuery();
 
-        BankPogo user = new BankPogo();
+        BankPogo user = new BankPogo(); //IS THIS MISSING GETTER AND CHNGE THIS BE ADDED?????`
         if (rs.next()) {
             user.setMainBankAccountNumber(rs.getInt("mainBankAccountNumber"));
-            user.setCheckingAcctBalance(rs.getInt("checkingAcctBalance"));
-            user.setSavingAcctBalance(rs.getInt("savingAcctBalance"));
+//            user.setCheckingAcctBalance(rs.getInt("checkingAcctBalance"));
+//            user.setSavingAcctBalance(rs.getInt("savingAcctBalance"));
+            user.setCheckingAcctBalance(rs.getDouble("checkingAcctBalance"));
+            user.setSavingAcctBalance(rs.getDouble("savingAcctBalance"));
+
+            //============ TEMP  STUFF  ===================
+//            user.getSavingAcctBalance(rs.getInt("savingAcctBalance"));
+
         } else {
             return null;
         }
@@ -52,8 +60,10 @@ public class BankRepo implements DataSourceCRUD<BankPogo> {
         String sql = "UPDATE user SET mainBankAccountNumber = ?, checkingAcctBalance = ?, savingAcctBalance = ?";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         pstmt.setInt(1, bankPogo.getMainBankAccountNumber());
-        pstmt.setInt(2, bankPogo.getCheckingAcctBalance());
-        pstmt.setInt(3, bankPogo.getSavingAcctBalance());
+//        pstmt.setInt(2, bankPogo.getCheckingAcctBalance());
+//        pstmt.setInt(3, bankPogo.getSavingAcctBalance());
+        pstmt.setDouble(2, bankPogo.getCheckingAcctBalance());
+        pstmt.setDouble(3, bankPogo.getSavingAcctBalance());
 
         pstmt.executeUpdate();
         String verify = "SELECT * FROM user WHERE mainBankAccountNumber = ?";
@@ -64,8 +74,10 @@ public class BankRepo implements DataSourceCRUD<BankPogo> {
         if(rs.next()) {
             BankPogo verifyUserPogo = new BankPogo();
             verifyUserPogo.setMainBankAccountNumber(rs.getInt("mainBankAccountNumber"));
-            verifyUserPogo.setCheckingAcctBalance(rs.getInt("checkingAcctBalance"));
-            verifyUserPogo.setSavingAcctBalance(rs.getInt("savingAcctBalance"));
+//            verifyUserPogo.setCheckingAcctBalance(rs.getInt("checkingAcctBalance"));
+//            verifyUserPogo.setSavingAcctBalance(rs.getInt("savingAcctBalance"));
+            verifyUserPogo.setCheckingAcctBalance(rs.getDouble("checkingAcctBalance"));
+            verifyUserPogo.setSavingAcctBalance(rs.getDouble("savingAcctBalance"));
             return verifyUserPogo;
 
 

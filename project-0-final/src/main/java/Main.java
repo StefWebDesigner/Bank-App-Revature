@@ -22,6 +22,8 @@ public class Main {
         viewManager.registerView(new WithdrawSavingMenu());
         viewManager.registerView(new CheckBalanceMenu());
 
+
+
         viewManager.navigator("MainInitialMenu");
 
         //in case I need it

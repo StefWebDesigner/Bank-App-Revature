@@ -16,7 +16,7 @@ public class DepositSavingMenu extends View {
 
             //TO RETIEVE THEIR  INFORMATION
 //
-//            BankRepo bankDepoRepo = new BankRepo();
+//            BankRepo bankRepo = new BankRepo();
 //
 //            //SHOW THEIR CURRENT BALANCE BY GETTER METHODS
 //            ContextStore.getCurrentAccount(); //THIS NEEDS TO GET THE CHECKING ACCOUNT??
@@ -35,6 +35,8 @@ public class DepositSavingMenu extends View {
 //            ContextStore.getCurrentAccount().savingAcctBalance();
 //            //then need it to execute
 //            savingAcctBalance = savingAcctBalance + amount;
+
+
 //
 //            //SHOW THEIR OFFICAL TRANACTION & CURRENT BALANCE
 //

@@ -16,29 +16,6 @@ public class MainInitialCreateMenu extends View {
 
     public void renderView() throws SQLException, IOException {
 
-        //VARIABLES IN SCOPE
-//        boolean finalValFirstName;
-//        boolean finalValLastName;
-//        boolean finalValUserName;
-//        boolean finalValPassword;
-//        boolean finalValEmail;
-//        boolean finalValCountry;
-//        boolean finalValaddressStreet;
-//        boolean finalValaddressState;
-//        boolean finalValaddressZipCode;
-
-//        //POGO VARIABLES
-//        Integer id;
-//        String permFirstName = null;
-//        String permLastName = null;
-//        String username;
-//        String permPassword = null;
-//        String permEmail = null;
-//        String permCountry = null;
-//        String permAddressStreet = null;
-//        String permAddressState = null;
-//        int permAddressZipCode = 0;
-
         System.out.println("************* Thanks for your interest in registrating for an account ************* ");
         System.out.println("Providing information now needed to sign up Today!");
         System.out.println("Let's get you started today with some quick details");
@@ -49,12 +26,12 @@ public class MainInitialCreateMenu extends View {
         System.out.println("***********************************************");
         System.out.println("Enter your first name : ");
         String firstName = (viewManager.getScanner().nextLine());
-        System.out.println(firstName); //CHECK IF IT IS NOT NULL
+        System.out.println(firstName);
 
         System.out.println("***********************************************");
         System.out.println("Enter your last name : ");
         String lastName = viewManager.getScanner().nextLine();
-        System.out.println(lastName); //CHECK IF IT IS NOT NULL
+        System.out.println(lastName);
 
         System.out.println("***********************************************");
         System.out.println("Enter your email: ");
@@ -80,7 +57,7 @@ public class MainInitialCreateMenu extends View {
 
         System.out.println("***********************************************");
 
-        //I need to validate all this information given to validate if the program can go futher
+
         System.out.println("________________________________________________________");
         System.out.println("Thanks " + firstName + " " + lastName);
         System.out.println("We are almost finished. Just a bits of information more....");
@@ -88,114 +65,43 @@ public class MainInitialCreateMenu extends View {
         System.out.println("***********************************************");
         System.out.println("Make up a username :");
         String username = viewManager.getScanner().nextLine();
-        System.out.println(username); //CHECK IF IT IS NOT NULL; //CHECKING TO SEE IF WORKS WITHOUT CONDITIONS
-
-//        if (username != (null)) {
-//            finalValUserName = true;
-//            System.out.println(" Checked passed");
-//        } else {
-//            finalValUserName = false;
-//            System.out.println("Please give yourseld a username");
-//            System.out.println(" Checked failed");
-//        }
+        System.out.println(username);
         System.out.println("***********************************************");
 
         System.out.println("Make a password :");
         String password = viewManager.getScanner().nextLine();
-        System.out.println(password); //CHECK IF IT IS NOT NULL
-
-//        if (password != (null)) {
-//            finalValPassword = true;
-//            System.out.println(" Checked passed");
-//        } else {
-//            finalValPassword = false;
-//            System.out.println("Please give yourseld a username");
-//            System.out.println(" Checked failed");
-//        }
+        System.out.println(password);
 
         System.out.println("***********************************************");
         System.out.println("Country : (Example US) ");
         String country = viewManager.getScanner().nextLine();
-        System.out.println(country); //CHECK IF IT IS NOT NULL
-
-
-//        //if they enter a UK account --- store that in a variable for the zipcode
-//        if (country.equals("US")) {
-//            finalValCountry = true;
-//            System.out.println(" Checked passed");
-//        } else {
-//            System.out.println("Unfortunately you do not qualify for our backing services");
-//            viewManager.navigator("MainInitalMenu");
-//            finalValCountry = false;
-//            System.out.println(" Checked failed");
-//        }
+        System.out.println(country);
 
         System.out.println("***********************************************");
         System.out.println("Street Address : ");
         String addressStreet = viewManager.getScanner().nextLine();
-        System.out.println(addressStreet); //CHECK IF IT IS NOT NULL
+        System.out.println(addressStreet);
 
-//        if (addressStreet != (null)) {
-//            finalValaddressStreet = true;
-//            System.out.println(" Checked passed");
-//        } else {
-//            finalValaddressStreet = false;
-//            System.out.println("Please fill in the Street Address Entry form");
-//            System.out.println(" Checked failed");
-//        }
         System.out.println("***********************************************");
 
-//        ***(no false statements if false)***
         System.out.println("***********************************************");
         System.out.println("State( For example : LA) ");
         String addressState = viewManager.getScanner().nextLine();
-        System.out.println(addressState); //CHECK IF IT IS NOT NULL
+        System.out.println(addressState);
 
-//
-//        if (addressState != null || addressState.length() == 1 || addressState.chars().allMatch(Character::isLetter)) {
-//            finalValaddressState = true;
-//            System.out.println(" Checked passed");
-//
-//        } else {
-//            finalValaddressState = false;
-//            System.out.println("Please abbrivate the state.");
-//        }
         System.out.println("***********************************************");
 
-
-        //        ***(no false statements if false)***
         System.out.println("***********************************************");
         System.out.println("Zipcode : ");
         Integer addressZipCode = viewManager.getScanner().nextInt();
         viewManager.getScanner().nextLine();
-        System.out.println(addressZipCode); //CHECK IF IT IS NOT NULL
+        System.out.println(addressZipCode);
 
-//        if (addressZipCode != null || Character.isDigit(addressZipCode)) {
-//            finalValaddressZipCode = true;
-//            System.out.println(" Checked passed");
-//
-//        } else {
-//            finalValaddressZipCode = false;
-//            System.out.println("Please only enter number");
-//            System.out.println(" Checked failed");
-//        }
         System.out.println("***********************************************");
-
-
-        //THE FINAL VALIDATION -- CHECK INFORMATION IS  PASSING EVERYTHING ALONG
-//        if (finalValFirstName == true && finalValLastName == true && finalValUserName == true && finalValPassword == true && finalValEmail == true && finalValCountry == true && finalValaddressStreet == true && finalValaddressState == true && finalValaddressZipCode == true) {
-//            if (finalValFirstName == true || finalValLastName == true || finalValUserName == true || finalValPassword == true || finalValEmail == true || finalValCountry == true || finalValaddressStreet == true || finalValaddressState == true || finalValaddressZipCode == true) {
 
         System.out.println("===============");
         System.out.println("Thank for filling out the form. Processing the information now");
         System.out.println("Review the following information: ");
-
-            /*
-           The persistance issue is linked to the logic here in this file, check carefully when and what is assigned where.
-           As it stands now, considering password, the perPassword field is null, the scanner input is
-           assigned to password, and later permPassword with a value of null overwrites password. So the final value sent to the
-           database is null. I would suggest not making a major refactor at this point, and simply shore up what references overwrite what and when.
-             */
 
         System.out.println(firstName + " " + lastName);
         System.out.println(username);
@@ -214,16 +120,11 @@ public class MainInitialCreateMenu extends View {
         CreateMenuRepo repo = new CreateMenuRepo();
         repo.create(user);
 
+
+
         viewManager.navigator("BankAppMainMenu");
 
         }
-
-//            System.out.println("**************************************************");
-//            System.out.println("Information Entry Failed Please try again ");
-//            System.out.println("**************************************************");
-
-//            viewManager.navigator("MainInitalMenu");
-
 
     }
 

@@ -4,34 +4,34 @@ import Persistance.BankPogo;
 import Persistance.CreateMenuPogo;
 
 public class ContextStore {
-
+    //THESE VARIABLES ARE IN SCOPE
     private static CreateMenuPogo currentUser;
     private static BankPogo currentAccount;
 
-    /*
-
-    This is a pretend call from elsewhere to this method:
-    ContextStore.setCurrentUser(anything_the_identifier_here_doesn't_matter);
-     */
-
-    //USER IS IN SCOPE AND CAN BE ANYTING --- FIGURE OUT A BETTER OF
-    //NAMING STUFF
-    public static void setCurrentUser(CreateMenuPogo user) {
-        currentUser = user;
-    }
+    //TO BE SETTING THIS AS THE CURRENT USER
 
     public static CreateMenuPogo getCurrentUser() {
 
         return currentUser;
     }
 
-    public static void getCurrentAccount(BankPogo bank) {
-        currentAccount = bank;
+    public static void setCurrentUser(CreateMenuPogo user) { //user is in scope
+
+        currentUser = user;
     }
 
+
+
     public static BankPogo getCurrentAccount() {
+
         return currentAccount;
     }
+
+
+    public static void setCurrentAccount(BankPogo currentAccount) {
+        ContextStore.currentAccount = currentAccount;
+    }
+
 
 
 }

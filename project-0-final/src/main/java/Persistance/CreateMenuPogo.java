@@ -3,10 +3,8 @@ package Persistance;
 
 public class CreateMenuPogo {
 
-
-
     //CREATE MENU VARIABLES
-    private Integer id;
+    private Integer id; // but the variable in database is an int not not an interger
     private String username;
     private String password;
     private String firstName;
@@ -21,7 +19,6 @@ public class CreateMenuPogo {
 
     }
 
-
     public CreateMenuPogo(Integer id, String username, String password, String firstName, String lastName, String email, String country, String addressStreet, String addressState, Integer addressZipCode) {
             this.id = id;
             this.username = username;
@@ -35,11 +32,13 @@ public class CreateMenuPogo {
             this.addressZipCode = addressZipCode;
         }
 
-
+    //WHAT IS THE DIFFERENCE BETWEEN THIS AND THE OTHER
     public CreateMenuPogo(String username, String password) {
         this.username = username;
         this.password = password;
     }
+
+
 
     public CreateMenuPogo(String username, String password, String firstName, String lastName, String email, String country, String addressStreet, String addressState, Integer addressZipCode) {
         this.username = username;
@@ -59,21 +58,21 @@ public class CreateMenuPogo {
     }
 
 
-    public void setId(Integer client_id) {
-        this.id = id;
-    }
-    public void setUsername(String username) {
+
+
+        public void setId(int client_id) {
+        this.id = id;} //##### DO i NEED THIS  IF CONTROLEED BY BEAVER
+//        public void setId(int client_id) { this.id = id}//##### DO i NEED THIS  IF CONTROLEED BY BEAVER
+        public void setUsername(String username) {
         this.username = username;
     }
-
-    public String getUsername() {
+        public String getUsername() {
         return username;
     }
 
-    public void setId(int client_id) {
-    }
 
-    public String getPassword () {
+
+        public String getPassword () {
             return password;
         }
 
@@ -139,6 +138,7 @@ public class CreateMenuPogo {
 
         public void create (CreateMenuPogo newUser){
         }
+
 
 }
 
