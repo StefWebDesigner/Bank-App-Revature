@@ -1,10 +1,10 @@
 //import static Persistance.BankPogo.checkingAcctBalance;
 //
-//public class BankAppMenuRevised extends View {
+//public class BankAppMenuRevised extends menu.View {
 //
 //    public BankAppMenuRevised() {
 //        viewName = "BankAppMenu";
-//        viewManager = ViewManager.getViewManager();
+//        viewManager = menu.ViewManager.getViewManager();
 //    }
 //
 //    public void renderView() {
@@ -13,7 +13,7 @@
 //        System.out.println("----------------------------------");
 //        System.out.println(" #1 For Deposit Activities");
 //        System.out.println(" #2 For Withdraw Activities");
-//        System.out.println(" #3 View your Current Account");
+//        System.out.println(" #3 menu.View your Current Account");
 //        System.out.println(" #4 Close application");
 //        System.out.println("Please choose an option");
 //        System.out.println("----------------------------------");

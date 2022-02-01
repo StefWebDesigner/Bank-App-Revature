@@ -1,4 +1,5 @@
 import Utils.ConnectionManager;
+import View.*;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -23,27 +24,22 @@ public class Main {
         viewManager.registerView(new CheckBalanceMenu());
 
 
-
-        viewManager.navigator("MainInitialMenu");
+        viewManager.navigator("menu.MainInitialMenu");
 
         //in case I need it
-//        viewManager.navigator("MainInitialLoginMenu");
+//        viewManager.navigator("menu.MainInitialLoginMenu");
 
 
-//        viewManager.navigator("MainInitialCreateMenu");
+//        viewManager.navigator("menu.MainInitialCreateMenu");
 
 //        viewManager.navigator("BankAppMenu");
 
 
-
-
-        while(viewManager.isRunning()) {
+        while (viewManager.isRunning()) {
             viewManager.render();
         }
 
 
-
-
     }
 
-    }
+}

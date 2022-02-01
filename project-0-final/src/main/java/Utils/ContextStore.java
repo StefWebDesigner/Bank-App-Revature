@@ -1,37 +1,35 @@
 package Utils;
 
-import Persistance.BankPogo;
-import Persistance.CreateMenuPogo;
+import Persistance.BankAccountModel;
+import Persistance.ClientInformationModel;
 
 public class ContextStore {
     //THESE VARIABLES ARE IN SCOPE
-    private static CreateMenuPogo currentUser;
-    private static BankPogo currentAccount;
+    private static ClientInformationModel currentUser;
+    private static BankAccountModel currentAccount;
 
     //TO BE SETTING THIS AS THE CURRENT USER
 
-    public static CreateMenuPogo getCurrentUser() {
+    public static ClientInformationModel getCurrentUser() {
 
         return currentUser;
     }
 
-    public static void setCurrentUser(CreateMenuPogo user) { //user is in scope
+    public static void setCurrentUser(ClientInformationModel user) { //user is in scope
 
         currentUser = user;
     }
 
 
-
-    public static BankPogo getCurrentAccount() {
+    public static BankAccountModel getCurrentAccount() {
 
         return currentAccount;
     }
 
 
-    public static void setCurrentAccount(BankPogo currentAccount) {
+    public static void setCurrentAccount(BankAccountModel currentAccount) {
         ContextStore.currentAccount = currentAccount;
     }
-
 
 
 }
